@@ -1,0 +1,21 @@
+{% extends 'Employee/base.html' %}
+
+{% block title %} Employee Detail {% endblock %}
+
+{% block body %}
+    {% if employees %}
+        <ol>
+        <li>Employee Id is: {{ employees.id }}</li>
+        <li>Employee Number is: {{ employees.eno }}</li>
+        <li>Employee Name is: {{ employees.ename }}</li>
+        <li>Employee Salary is: {{ employees.salary }}</li>
+        <li>Employee Address is: {{ employees.address }}</li>
+        <li>Employee Mobile is: {{ employees.mobile }}</li>
+        </ol>
+
+    {% else %}
+        <h1>Request Employee Details Is Not Available</h1>
+    {% endif %}
+
+    <a href="{% url 'employeelist' %}">Goto Table</a>
+{% endblock %}

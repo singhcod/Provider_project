@@ -1,0 +1,22 @@
+{% extends 'Employee/base.html' %}
+
+{% block title %} Delete Employee {% endblock %}
+
+
+{% block body %}
+    {% if employees %}
+        <h2>Are You Sure To Delete {{ employees.ename }} Record</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="{% url 'employeelist' %}" class="btn btn-warning">Cancel</a>
+
+        </form>
+    {% else %}
+        <h1>{{ error }}</h1>
+
+    {% endif %}
+
+
+{% endblock %}
